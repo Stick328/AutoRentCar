@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Inicio</h1>
+    <a th:href="@{/agregar}">Agregar auto</a>
+    <br>
+    <!-- EL TH: IF SIRVE PARA DARLE CONDICION EN PANTALLA A LO QUE QUIERES QUE CUMPLA LA VISTA-->
+    <div th:if="${ vehiculo !=null and !vehiculo.empty}">
+    <table border="2px">
+        <tr>
+            <th>id</th>
+            <th>marca</th>
+            <th>modelo</th>
+            <th>anio</th>
+            <th>matricula</th>
+            <th>Precio Por Dia</th>
+            <th>Disponible</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <!-- EL TH: EACH SIRVE PARA PODER LLAMAR UN LISTA-->
+        <tr th:each="vehiculo : ${vehiculo}">
+            <td th:text="${vehiculo.id}"></td>
+            <td th:text="${vehiculo.marca}"></td>
+            <td th:text="${vehiculo.modelo}"></td>
+            <td th:text="${vehiculo.anio}"></td>
+            <td th:text="${vehiculo.matricula}"></td>
+            <td th:text="${vehiculo.precioPorDia}" style="text-align: center"></td>
+            <td th:text="${vehiculo.disponible}"></td>
+            <td><a th:href="@{/editar/} + ${vehiculo.id}" th:text="editar"></a></td>
+            <td><a th:href="@{/eliminar/{id}(id=${vehiculo.id})}">Eliminar</a></td>
+        </tr>
+    </table>
+    </div>
+    <div th:if="${vehiculo == null or vehiculo.empty}">
+        <p>LA LISTA DE PERSONAS ESTÁ VACIA</p>
+    </div>
+
+</body>
+</html>

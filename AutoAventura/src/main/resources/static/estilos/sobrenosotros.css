@@ -1,0 +1,59 @@
+body {
+    font-family: "Open Sans", serif;
+    margin: 0;
+    padding-top: 116px;
+    background-color: #f4f4f4;
+    
+}
+
+.header {
+    width: 100%;
+    background-color: #0f0d0d;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.about-section {
+    flex: 1;
+}
+
+section{
+    justify-content: center;
+    align-items: center;
+    padding: 40px   ;
+    
+}
+
+
+
+
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: auto;
+}

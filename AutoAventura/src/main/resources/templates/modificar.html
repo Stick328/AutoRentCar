@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datos del auto</title>
+</head>
+<body>
+    <h1>Datos del Auto</h1>
+    <a th:href="@{/uno}">Regresar</a>
+    <br>
+    <form th:action="@{/guardar}" method="post" th:object="${vehiculos}">
+
+        <input type="hidden" name="id" th:field="*{id}">
+        <br>
+        <label>Marca:</label>
+        <input type="text" th:field="*{marca}"/>
+        <br>
+        <label>Modelo:</label>
+        <input type="text"  th:field="*{modelo}"/>
+        <br>
+        <label>Año:</label>
+        <input type="number"  th:field="*{anio}"/>
+        <br>
+        <label>Matricula:</label>
+        <input type="text"  th:field="*{matricula}"/>
+        <br>
+        <label>Precio por dia:</label>
+        <input type="number"  th:field="*{precioPorDia}"/>
+        <br>
+        <label>Disponibilidad:</label>
+        <input type="text"  th:field="*{disponible}"/>
+        <br>
+        <button type="submit">Guardar</button>
+
+    </form>
+</body>
+</html>
